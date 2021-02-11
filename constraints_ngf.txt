@@ -1,0 +1,48 @@
+/* This file creates the constraints for nexgen financials database 
+	
+	Created:		January 11, 2021
+	Written by: 	Andre Colaris								*/
+	
+ALTER TABLE ngf_clients
+ADD CONSTRAINT pk_client_id PRIMARY KEY (client_id)
+ADD CONSTRAINT check_provincal_code check (province in ('AB', 'BC', 'NL', 'PE', 'NS', 'NB', 'QC', 'ON',
+	'MB', 'SK', 'YT', 'NT', 'NU'))
+MODIFY first_name NOT NULL
+MODIFY last_name NOT NULL
+MODIFY email NOT NULL
+MODIFY date_of_birth NOT NULL
+MODIFY street_address NOT NULL
+MODIFY country NOT NULL
+MODIFY postal_code NOT NULL
+;
+
+ALTER TABLE ngf_policies
+ADD CONSTRAINT pk_policy_id PRIMARY KEY (policy_id)
+ADD CONSTRAINT fk_client_id_policy FOREIGN KEY (client_id)
+	REFERENCES ngf_clients
+MODIFY policy_number NOT NULL
+MODIFY first_name NOT NULL
+MODIFY last_name NOT NULL
+MODIFY provider NOT NULL
+MODIFY type NOT NULL
+MODIFY coverage_amount NOT NULL
+MODIFY start_date NOT NULL
+MODIFY end_date NOT NULL
+;
+
+ALTER TABLE ngf_administrators
+ADD CONSTRAINT pk_employee_id PRIMARY KEY (employee_id)
+MODIFY role NOT NULL
+MODIFY email NOT NULL
+MODIFY first_name NOT NULL
+MODIFY last_name NOT NULL 
+;
+
+ALTER TABLE ngf_summaries
+ADD CONSTRAINT pk_summary_id  PRIMARY KEY (summary_id)
+ADD CONSTRAINT fk_client_id_summary FOREIGN KEY (client_id)
+	REFERENCES ngf_clients
+MODIFY first_name NOT NULL
+MODIFY last_name NOT NULL
+MODIFY path NOT NULL
+;

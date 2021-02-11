@@ -1,0 +1,66 @@
+/* This file creates the tables for Nexgen financials database.
+	It creates the basic tables without the constraints 
+	
+	Created:		January 11, 2021
+	Written by: 	Andre Colaris								*/
+	
+
+DROP TABLE ngf_policies CASCADE CONSTRAINTS;
+DROP TABLE ngf_clients CASCADE CONSTRAINTS;
+DROP TABLE ngf_administrators CASCADE CONSTRAINTS;
+DROP TABLE ngf_summaries CASCADE CONSTRAINTS;
+DROP SEQUENCE client_id_seq;
+DROP SEQUENCE policy_id_seq;
+
+CREATE SEQUENCE client_id_seq 
+START WITH 1
+INCREMENT BY 1
+MAXVALUE 99999;
+
+CREATE SEQUENCE policy_id_seq 
+START WITH 1
+INCREMENT BY 1
+MAXVALUE 99999;
+
+CREATE TABLE ngf_policies (
+policy_id			NUMBER (5),
+client_id			NUMBER (5),
+policy_number 		VARCHAR2 (20),
+first_name 			VARCHAR2 (20),
+last_name			VARCHAR2 (20),
+provider			VARCHAR2 (30),
+type				VARCHAR2(20),
+coverage_amount		NUMBER (12,5),
+start_date			DATE,
+end_date 			VARCHAR2 (30)
+);
+
+CREATE TABLE ngf_clients (
+client_id			NUMBER (5),
+email				VARCHAR2 (30),
+first_name 			VARCHAR2 (20),
+last_name			VARCHAR2 (20),
+date_of_birth		DATE,
+phone_number		VARCHAR2 (10),
+street_address		VARCHAR2 (40),
+province			VARCHAR2 (2),
+country				VARCHAR2 (30),
+postal_code			VARCHAR2 (6)
+);
+
+CREATE TABLE ngf_administrators (
+employee_id			NUMBER (5),
+role				NUMBER (1),
+email				VARCHAR2 (30),
+first_name			VARCHAR2 (20),
+last_name			VARCHAR2 (20)
+);
+
+CREATE TABLE ngf_summaries (
+summary_id			NUMBER (5),
+client_id			NUMBER (5),
+first_name 			VARCHAR2 (20),
+last_name			VARCHAR2 (20),
+path				VARCHAR2 (50)
+);
+	
