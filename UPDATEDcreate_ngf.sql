@@ -7,8 +7,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 CREATE TABLE ngf_policies (
-policy_id int (5) auto_increment primary key,
-client_id int (5) NOT NULL,
+policy_id int (5)  auto_increment primary key,
+client 	  int (5) NOT NULL,
 policy_number 		VARCHAR (20) NOT NULL,
 first_name 			VARCHAR (20) NOT NULL,
 last_name			VARCHAR (20) NOT NULL,
@@ -20,7 +20,7 @@ end_date 			VARCHAR (30) NOT NULL
 );
 
 CREATE TABLE ngf_clients (
-client_id			int (5) unsigned  auto_increment primary key,
+client_id			int (5)  auto_increment primary key,
 email				VARCHAR (30) NOT NULL,
 first_name 			VARCHAR (20) NOT NULL,
 last_name			VARCHAR (20) NOT NULL,

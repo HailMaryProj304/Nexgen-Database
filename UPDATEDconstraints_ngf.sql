@@ -9,7 +9,7 @@ ADD CONSTRAINT check_provincal_code check (province in ('AB', 'BC', 'NL', 'PE', 
 ;
 
 ALTER TABLE ngf_policies
-ADD CONSTRAINT fk_client_id_policy FOREIGN KEY (client_id)
+ADD CONSTRAINT fk_client_id_policy FOREIGN KEY (client)
 	REFERENCES ngf_clients(client_id)
 ;
 
