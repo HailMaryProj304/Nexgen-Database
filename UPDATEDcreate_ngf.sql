@@ -30,7 +30,6 @@ street_address		VARCHAR (40) NOT NULL,
 province			VARCHAR (2) NOT NULL,
 country				VARCHAR (30) NOT NULL,
 postal_code			VARCHAR (6) NOT NULL,
-username			VARCHAR (10) NOT NULL,
 password			VARCHAR (10) NOT NULL
 );
 
