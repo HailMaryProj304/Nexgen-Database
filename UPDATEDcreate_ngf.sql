@@ -20,7 +20,7 @@ end_date 			VARCHAR (30) NOT NULL
 );
 
 CREATE TABLE ngf_clients (
-client_id			int (5) auto_increment primary key,
+client_id			int (5) unsigned  auto_increment primary key,
 email				VARCHAR (30) NOT NULL,
 first_name 			VARCHAR (20) NOT NULL,
 last_name			VARCHAR (20) NOT NULL,
@@ -29,7 +29,9 @@ phone_number		VARCHAR (10) NOT NULL,
 street_address		VARCHAR (40) NOT NULL,
 province			VARCHAR (2) NOT NULL,
 country				VARCHAR (30) NOT NULL,
-postal_code			VARCHAR (6) NOT NULL
+postal_code			VARCHAR (6) NOT NULL,
+username			VARCHAR (10) NOT NULL,
+password			VARCHAR (10) NOT NULL
 );
 
 CREATE TABLE ngf_administrators (
