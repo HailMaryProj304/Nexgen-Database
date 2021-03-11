@@ -34,11 +34,12 @@ password			VARCHAR (10) NOT NULL
 );
 
 CREATE TABLE ngf_administrators (
-employee_id			int (5) primary key,
+employee_id			int (5) auto_increment primary key,
 role				int (1) NOT NULL,
 email				VARCHAR (30) NOT NULL,
 first_name			VARCHAR (20) NOT NULL,
-last_name			VARCHAR (20) NOT NULL
+last_name			VARCHAR (20) NOT NULL,
+password			VARCHAR (20) NOT NULL
 );
 
 CREATE TABLE ngf_summaries (
