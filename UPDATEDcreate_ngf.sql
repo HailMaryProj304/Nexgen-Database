@@ -43,10 +43,8 @@ password			VARCHAR (20) NOT NULL
 );
 
 CREATE TABLE ngf_summaries (
-summary_id			int (5) primary key,
-client_id			int (5) NOT NULL,
-first_name 			VARCHAR (20) NOT NULL,
-last_name			VARCHAR (20) NOT NULL,
+summary_id			int (5) auto_increment primary key,
+client 	  			int (5) NOT NULL,
 path				VARCHAR (50) NOT NULL
 );
 	

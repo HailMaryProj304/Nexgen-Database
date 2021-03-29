@@ -14,6 +14,6 @@ ADD CONSTRAINT fk_client_id_policy FOREIGN KEY (client)
 ;
 
 ALTER TABLE ngf_summaries
-ADD CONSTRAINT fk_client_id_summary FOREIGN KEY (client_id)
+ADD CONSTRAINT fk_client_id_summary FOREIGN KEY (client)
 	REFERENCES ngf_clients(client_id)
 ;
