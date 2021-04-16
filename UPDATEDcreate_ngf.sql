@@ -45,6 +45,6 @@ password			VARCHAR (20) NOT NULL
 CREATE TABLE ngf_summaries (
 summary_id			int (5) auto_increment primary key,
 client 	  			int (5) NOT NULL,
-path				VARCHAR (50) NOT NULL
+path				VARCHAR (100) NOT NULL
 );
 	
